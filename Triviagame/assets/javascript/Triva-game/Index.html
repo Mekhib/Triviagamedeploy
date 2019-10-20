@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Totally Trivial Trivia</title>
+
+    <!-- CSS Reset Sheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Geo"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <button id="start">Start test</button>
+      <div id="test"></div>
+    </div>
+    <button id="submit">submit!</button>
+    <div id="results"></div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    var questions = [
+      {
+        question: "What avenger has lived the longest?",
+        answers: ["Thor", "Captain Marvel", "Tony Stark", "The Cap"],
+        correctAnswer: "Thor"
+      },
+      {
+        question: "what was the name of the first iphone?",
+        answers: ["Iphone", "Iphone 2g", "Iphone 3gs", "Iphone 1"],
+        correctAnswer: "Iphone 2g"
+      },
+      {
+        question: "what is the biggest loss leader for mcdonaolds?",
+        answers: ["fries", "Drinks", "Big Mac", "Other"],
+        correctAnswer: "fries"
+      },
+      {
+        question: "Which was Micheal Jackson's second solo album?",
+        answers: ["Off the wall", "Thriller", "bad", "Other"],
+        correctAnswer: "Thriller"
+      },
+      {
+        question: "Which shrek has the highest rotten tomato score?",
+        answers: ["Shrek", "Shrek 2", "Sherk 3", "Sherk 4"],
+        correctAnswer: "Shrek 2"
+      },
+      {
+        question: "on spongebob, what is Plankton's first name?",
+        answers: ["Karen", "evil", "mary", "Sheldon"],
+        correctAnswer: "Sheldon"
+      },
+      {
+        question: "who founded microsoft",
+        answers: ["paul allen", "paul george", "pauly d", "steve woznizak"],
+        correctAnswer: "paul allen"
+      },
+      {
+        question: "who always dies on south park?",
+        answers: ["kenny", "cartman", "Eric", "token"],
+        correctAnswer: "kenny"
+      }
+    ];
+    var correct = 0;
+    var incorrect = 0;
+    var quizcard = $("#test");
+    $("#start").on("click", function() {
+      console.log("you clicked me!");
+      quiz();
+    });
+
+    function quiz() {
+      for (var i = 0; i < questions.length; i++) {
+        console.log("hello");
+        quizcard.append("<h2>" + questions[i].question + "</h2>");
+        for (var m = 0; m < questions[i].answers.length; m++) {
+          console.log("for loop 2");
+          quizcard.append(
+            "<input type='radio' id='button' name='question-" +
+              i +
+              "' value='" +
+              questions[i].answers[m] +
+              "''>" +
+              questions[i].answers[m]
+          );
+        }
+      }
+      var correctAnswer = questions[i].correctAnswer;
+      var userAnswer = card.children("input:checked");
+      for (var i = 0; i < userAnswer.length; i++) {
+        var uservalue = $(inputs[i]).val();
+        if (uservalue === correctAnswer) {
+          correct++;
+        }
+        if (userAnswer !== correctAnswer) {
+          {
+            incorrect++;
+          }
+        }
+      }
+    }
+    function timesup() {
+      alert("oh no! you ran out of time!");
+      location.href =
+        "file:///C:/Users/khi%20khi/Desktop/Triviagame/assets/javascript/Triva-game/Index.html";
+    }
+    setTimeout(timesup, 30000);
+
+    $("#submit").on("click", () => {
+      alert("You got" + correct + " " + "correct");
+      $("#test").empty();
+      quiz();
+    });
+  </script>
+</html>

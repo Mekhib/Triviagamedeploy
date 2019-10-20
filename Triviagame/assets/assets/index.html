@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="hello.css">
+    <title>Document</title>
+</head>
+<body>
+    <heading id="trivia">Triva Time!!!</heading>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="questions">
+    <p>Question 1: Captain America’s shield is made of: </p>
+    <INPUT TYPE="radio" NAME="q1" VALUE="Vibranium" class="right">Vibranium
+    <INPUT TYPE="radio" NAME="q1" VALUE="medal">medal
+    <INPUT TYPE="radio" NAME="q1" VALUE="silt rock">silt rock
+    <INPUT TYPE="radio" NAME="q1" VALUE="An Infinty stone">An Infinty stone
+    </div>
+    <br>
+    <div class="questions">
+    <p>Question 2: True or false: 98% of the world is right handed</p>
+    <INPUT TYPE="radio" NAME="q2" VALUE="true" class="wrong">true
+    <INPUT TYPE="radio" NAME="q2" VALUE="true" class="right">false
+    </div>
+    <br>
+    <div class="questions">
+    <p>Question 3: Arrays start at:</p>
+    <INPUT TYPE="radio" NAME="q2" VALUE="1" class="wrong">1
+    <INPUT TYPE="radio" NAME="q2" VALUE="true" class="right">0
+    <INPUT TYPE="radio" NAME="q2" VALUE="array" class="wrong">at the first string in the array
+    </div>
+    <div id="timer">
+        <p>Time left on quiz: </p>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type = "text/javascript">
+var rightAwnsers=0;
+var wrongAwnsers=0;
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        $("#timer").append(minutes + ":" + seconds);
+    }, 1000);
+}
+$(".right").click(function(){
+    alert("congrats you got it!");
+    rightAwnsers++;
+    console.log(rightAwnsers);
+});
+$(".wrong").click(function(){
+    alert("you didn't got it!");
+    wrongAwnsers++
+});
+startTimer(10,0);
+console.log(startTimer);
+//the user is presented with all trivia layed out
+//if the user clicks the right button, an alert pops up saying right
+//if user clicks wrong button, an alert pops up wrong
+//timer at the end 
+
+
+</script>
+</html>

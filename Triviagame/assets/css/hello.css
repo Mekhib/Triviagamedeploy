@@ -1,0 +1,23 @@
+body {
+    background-image:url("https://as1.ftcdn.net/jpg/01/85/19/60/500_F_185196011_f7n7Ja7QUNjGJbGUcKTDHp7m39XPgw4C.jpg");
+}
+.questions {
+    background-color:rgb(207, 204, 17);
+    font-size: 30px;
+    border-radius: 25px;
+    padding: 20px; 
+    width: auto;
+    height: auto;
+}
+#trivia{
+   font-size: 60px;
+   background-color: brown;
+   border-radius: 25px;
+   padding: 20px; 
+   width: auto;
+   height: auto;
+}
+#timer{
+    background-color: rebeccapurple;
+    font-size: 30px;
+}
